@@ -4,6 +4,8 @@ import Caballeros from "./pages/Caballeros";
 import Camisas from "./pages/Camisas";
 import Pantalones from "./pages/pantalones";
 import Damas from "./pages/Damas";
+import Contacto from "./pages/Contacto";
+import PantalonesDama from "./pages/PantalonesDama";
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +15,8 @@ function App() {
         <Route path="/camisas" element={<Camisas />} />
         <Route path="/pantalones" element={<Pantalones />} />
         <Route path="/damas" element={<Damas />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/pantalonesdama" element={<PantalonesDama />} />
       </Routes>
     </BrowserRouter>
   );

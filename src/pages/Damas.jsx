@@ -24,7 +24,7 @@ function Damas() {
             <p>Blusas</p>
           </Link>
 
-          <Link to="/pantalones" className="item">
+          <Link to="/pantalonesdama" className="item">
   <img src={pantalonImg} alt="Pantalones" />
   <p>Pantalones</p>
 </Link>

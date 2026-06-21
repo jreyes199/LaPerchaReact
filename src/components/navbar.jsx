@@ -44,7 +44,7 @@ function Navbar() {
           <Link to="/">Inicio</Link>
           <Link to="/damas">Damas</Link>
           <Link to="/caballeros">Caballeros</Link>
-          <a href="#">Contáctanos</a>
+          <Link to="/contacto">Contáctanos</Link>
           <a href="#">Blog</a>
           <a href="#">Verano</a>
         </div>

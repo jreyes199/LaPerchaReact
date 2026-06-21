@@ -1,0 +1,154 @@
+
+:root {
+  --gold: #c5a059;
+  --text: #2b2b2b;
+  --soft: #f4f1ea;
+  --white: #ffffff;
+}
+
+
+.contacto-light-container {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+}
+
+.contacto-hero-light {
+  padding: 90px 20px;
+  text-align: center;
+  background: radial-gradient(circle at top, #faf9f6 0%, var(--soft) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeInHero 0.9s ease-out;
+}
+
+.hero-subtitle-light {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--text);
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.hero-title-light {
+  font-size: 2.8rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.hero-text-light {
+  font-size: 1.05rem;
+  color: #444;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.luxury-line-light {
+  width: 50px;
+  height: 1px;
+  background: #8c7e6d;
+  margin: 0 auto;
+  transition: width 0.4s ease;
+}
+
+.contacto-hero-light:hover .luxury-line-light {
+  width: 110px;
+}
+
+
+.channels-section-light {
+  padding: 0px 20px;
+  background: #fff;
+}
+
+.channels-grid-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+
+.light-card {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  align-items: center;
+}
+
+.light-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+  border-color: rgba(197, 160, 89, 0.35);
+}
+
+.card-icon-light {
+  font-size: 30px;
+}
+
+.card-body-light h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.card-body-light p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.card-link {
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .contacto-hero-light {
+    padding: 65px 15px;
+  }
+
+  .hero-title-light {
+    font-size: 2.2rem;
+  }
+
+  .hero-text-light {
+    font-size: 0.95rem;
+  }
+
+  .channels-grid-light {
+    grid-template-columns: 1fr;
+  }
+}
