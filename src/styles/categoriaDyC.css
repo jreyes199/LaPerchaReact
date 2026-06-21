@@ -1,4 +1,3 @@
-
 .contenido-damas,
 .contenido-caballeros {
   min-height: 100vh;
@@ -8,7 +7,6 @@
   width: 100%;
 }
 
-
 .contenido-damas {
   background-image:
     linear-gradient(
@@ -17,7 +15,6 @@
     ),
     url("../assets/fondo1\ \(2\).jpg"); 
 }
-
 
 .contenido-caballeros {
   background-image:
@@ -38,23 +35,19 @@
   padding: 30px 15px;
   color: #ffffff;
   
-  /* Fuentes elegantes y espaciado estilo boutique */
   font-family: 'Playfair Display', 'Didot', 'Georgia', serif;
   letter-spacing: 4px;
   text-transform: uppercase;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil para resaltar del fondo */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   
-  /* Flexbox para alinear las líneas laterales con el texto */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 25px;
 
-  /* --- ANIMACIÓN DE ENTRADA (Opción 3) --- */
   animation: entradaElegante 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-/* Línea decorativa izquierda */
 .breadcrumb::before {
   content: "";
   flex: 1;
@@ -63,7 +56,6 @@
   background: linear-gradient(to left, #ffffff, transparent);
 }
 
-/* Línea decorativa derecha */
 .breadcrumb::after {
   content: "";
   flex: 1;
@@ -72,17 +64,16 @@
   background: linear-gradient(to right, #ffffff, transparent);
 }
 
-/* --- DEFINICIÓN DE LA ANIMACIÓN (Efecto Fade-in + Subida + Blur) --- */
 @keyframes entradaElegante {
   0% {
     opacity: 0;
-    transform: translateY(30px); /* Empieza 30px más abajo */
-    filter: blur(8px);           /* Efecto de desenfoque inicial */
+    transform: translateY(30px);
+    filter: blur(8px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);    /* Sube a su posición real */
-    filter: blur(0);             /* Se aclara por completo */
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
 
@@ -91,7 +82,7 @@
 }
 
 /* ==========================================
-   3. FILA DE CÍRCULOS (CORREGIDO)
+   3. FILA DE CÍRCULOS (CORREGIDO PARA HOVER EN TEXTO)
    ========================================== */
 
 .categorias {
@@ -99,7 +90,7 @@
   flex-direction: row !important;
   justify-content: center;
   align-items: center;
-  gap: 80px; /* Un poco más juntos para mantener la elegancia */
+  gap: 80px; 
   margin-top: -120px;
   padding: 30px;
   width: 100%;
@@ -111,11 +102,7 @@
   align-items: center;
   text-align: center;
   text-decoration: none;
-  transition: transform 0.4s ease; /* Transición más suave y premium */
-}
-
-.item:hover {
-  transform: translateY(-8px); /* Sube sutilmente, sin agrandarse bruscamente */
+  /* Eliminamos el transform general de aquí */
 }
 
 /* El círculo con borde delicado */
@@ -126,39 +113,44 @@
   object-fit: cover;
   display: block;
   
-  /* Borde fino color blanco/crema semi-transparente */
   border: 2px solid rgba(255, 255, 255, 0.4); 
-  
-  /* Sombra suave alrededor del círculo */
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  /* Se añade 'transform' a la transición de la imagen */
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
-/* Efecto sutil al pasar el mouse sobre la foto */
-.item:hover img {
-  border-color: rgba(255, 255, 255, 0.9); /* El borde se ilumina un poco */
-  box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.15); /* Destello blanco muy sutil abajo */
-}
-
-/* Letras sobrias y bonitas (Como el título) */
+/* Letras sobrias y bonitas */
 .item p {
   color: #ffffff;
-  font-size: 15px; /* Un tamaño más compacto y elegante */
+  font-size: 15px; 
   margin-top: 18px;
+  padding: 5px 15px; /* Añade un área de toque un poco más cómoda para el mouse */
   
-  /* Fuentes de serif clásicas de marcas de lujo */
   font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', 'Cinzel', serif; 
   
-  font-weight: 300;       /* Hace la letra más delgada y fina */
-  letter-spacing: 5px;    /* Más espacio entre letras para un look de revista */
-  text-transform: uppercase; /* Todo en mayúsculas obligatorio */
+  font-weight: 300;       
+  letter-spacing: 5px;    
+  text-transform: uppercase; 
   
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Sombra muy suave */
-  transition: all 0.3s ease;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); 
+  /* Se añade 'transform' a la transición del texto */
+  transition: all 0.3s ease, transform 0.4s ease;
 }
 
-/* Efecto al pasar el mouse sobre el texto */
-.item:hover p {
-  letter-spacing: 6px;    /* La letra se expande un milímetro al pasar el mouse */
+/* ==========================================
+   NUEVA LÓGICA DE HOVER (APLICA SOLO AL TOCAR EL TEXTO)
+   ========================================== */
+
+/* 1. Al pasar el mouse por el texto, expande y aclara las letras */
+.item p:hover {
+  letter-spacing: 6px;    
   color: #f1f1f1;
+  transform: translateY(-4px); /* Sube el texto sutilmente */
+}
+
+/* 2. TRUCO CSS: Al pasar el mouse por el texto (p:hover), iluminamos y subimos la imagen (img) */
+.item:has(p:hover) img {
+  transform: translateY(-8px); 
+  border-color: rgba(255, 255, 255, 0.9); 
+  box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.15); 
 }
