@@ -1,0 +1,164 @@
+
+.contenido-damas,
+.contenido-caballeros {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+/* 2. AQUÍ CAMBIAS LA IMAGEN DE DAMAS */
+.contenido-damas {
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+    ),
+    url("../assets/fondo1\ \(2\).jpg"); 
+}
+
+/* 3. AQUÍ CAMBIAS LA IMAGEN DE CABALLEROS */
+.contenido-caballeros {
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+    ),
+    url("../assets/imgc.jpg"); 
+}
+
+/* ==========================================
+   2. TÍTULOS CON ANIMACIÓN (BREADCRUMB)
+   ========================================== */
+
+.breadcrumb {
+  font-size: 32px;
+  text-align: center;
+  padding: 30px 15px;
+  color: #ffffff;
+  
+  /* Fuentes elegantes y espaciado estilo boutique */
+  font-family: 'Playfair Display', 'Didot', 'Georgia', serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil para resaltar del fondo */
+  
+  /* Flexbox para alinear las líneas laterales con el texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+
+  /* --- ANIMACIÓN DE ENTRADA (Opción 3) --- */
+  animation: entradaElegante 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Línea decorativa izquierda */
+.breadcrumb::before {
+  content: "";
+  flex: 1;
+  max-width: 90px;
+  height: 1px;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+/* Línea decorativa derecha */
+.breadcrumb::after {
+  content: "";
+  flex: 1;
+  max-width: 90px;
+  height: 1px;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+/* --- DEFINICIÓN DE LA ANIMACIÓN (Efecto Fade-in + Subida + Blur) --- */
+@keyframes entradaElegante {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Empieza 30px más abajo */
+    filter: blur(8px);           /* Efecto de desenfoque inicial */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);    /* Sube a su posición real */
+    filter: blur(0);             /* Se aclara por completo */
+  }
+}
+
+.hero{
+  height: 10vh;
+}
+
+/* ==========================================
+   3. FILA DE CÍRCULOS (CORREGIDO)
+   ========================================== */
+
+.categorias {
+  display: flex !important;      
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; /* Un poco más juntos para mantener la elegancia */
+  margin-top: -120px;
+  padding: 30px;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;        
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.4s ease; /* Transición más suave y premium */
+}
+
+.item:hover {
+  transform: translateY(-8px); /* Sube sutilmente, sin agrandarse bruscamente */
+}
+
+/* El círculo con borde delicado */
+.item img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  
+  /* Borde fino color blanco/crema semi-transparente */
+  border: 2px solid rgba(255, 255, 255, 0.4); 
+  
+  /* Sombra suave alrededor del círculo */
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efecto sutil al pasar el mouse sobre la foto */
+.item:hover img {
+  border-color: rgba(255, 255, 255, 0.9); /* El borde se ilumina un poco */
+  box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.15); /* Destello blanco muy sutil abajo */
+}
+
+/* Letras sobrias y bonitas (Como el título) */
+.item p {
+  color: #ffffff;
+  font-size: 15px; /* Un tamaño más compacto y elegante */
+  margin-top: 18px;
+  
+  /* Fuentes de serif clásicas de marcas de lujo */
+  font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', 'Cinzel', serif; 
+  
+  font-weight: 300;       /* Hace la letra más delgada y fina */
+  letter-spacing: 5px;    /* Más espacio entre letras para un look de revista */
+  text-transform: uppercase; /* Todo en mayúsculas obligatorio */
+  
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Sombra muy suave */
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre el texto */
+.item:hover p {
+  letter-spacing: 6px;    /* La letra se expande un milímetro al pasar el mouse */
+  color: #f1f1f1;
+}

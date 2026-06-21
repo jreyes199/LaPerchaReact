@@ -1,0 +1,140 @@
+.camisas-container{
+  min-height:100vh;
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
+    url("../assets/imgc2.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+.titulo{
+  text-align:center;
+  color:white;
+  padding-top:40px;
+  font-size:40px;
+}
+
+.productos{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit, minmax(280px, 1fr));
+
+  gap:30px;
+
+  padding:50px;
+
+  max-width:1400px;
+
+  margin:auto;
+}
+
+.card{
+  background:white;
+
+  border-radius:15px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 8px 25px rgba(0,0,0,.15);
+
+  transition:.3s;
+}
+
+
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+
+  height:320px;
+
+  object-fit:cover;
+}
+
+.card-info{
+  padding:20px;
+}
+
+.card h3{
+  margin-bottom:10px;
+
+  font-size:22px;
+}
+
+.descripcion{
+  color:#666;
+
+  font-size:14px;
+
+  line-height:1.5;
+
+  margin-bottom:15px;
+}
+.estrellas{
+  font-size:18px;
+
+  margin-bottom:15px;
+}
+
+.contenedor-precios{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:20px;
+}
+
+.precio-anterior{
+  text-decoration:line-through;
+
+  color:#999;
+
+  font-size:18px;
+}
+
+.precio{
+  font-size:28px;
+
+  font-weight:bold;
+
+  color:#111;
+}
+
+.btn-carrito{
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#daba63;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.btn-carrito:hover{
+  background:black;
+
+  color:white;
+}
