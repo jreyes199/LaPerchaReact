@@ -3,6 +3,8 @@ import Principal from "./pages/Principal";
 import Caballeros from "./pages/Caballeros";
 import Camisas from "./pages/Camisas";
 import Pantalones from "./pages/pantalones";
+import Shorts from "./pages/Shorts";
+
 function App() {
   return (
     <BrowserRouter>
@@ -11,6 +13,7 @@ function App() {
         <Route path="/caballeros" element={<Caballeros />} />
         <Route path="/camisas" element={<Camisas />} />
         <Route path="/pantalones" element={<Pantalones />} />
+        <Route path="/shorts" element={<Shorts />} />
       </Routes>
     </BrowserRouter>
   );
