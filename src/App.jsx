@@ -6,6 +6,8 @@ import Pantalones from "./pages/pantalones";
 import Damas from "./pages/Damas";
 import Contacto from "./pages/Contacto";
 import PantalonesDama from "./pages/PantalonesDama";
+import Login from "./pages/Login";
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +19,7 @@ function App() {
         <Route path="/damas" element={<Damas />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/pantalonesdama" element={<PantalonesDama />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

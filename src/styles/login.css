@@ -1,0 +1,171 @@
+/* ==========================================================================
+   1. CONTENEDOR PRINCIPAL (Aislado para que no afecte a otras páginas)
+   ========================================================================== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 1. Cambiado 'center' por 'flex-start' para enviarlo arriba */
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-cream-light);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 40px 20px 20px 20px; /* 2. Aumentamos el primer valor (padding-top) a 40px o 60px para despegarlo del techo de forma exacta */
+  box-sizing: border-box;
+  margin: 0;
+}
+/* ==========================================================================
+   2. VARIABLES DE COLOR 
+   ========================================================================== */
+:root {
+  --bg-cream-light: #f7f4eb;  
+  --card-bg-cream: #ffffff;   
+  --text-dark: #1a1a1a;       
+  --text-muted: #6b6659;      
+  --gold-primary: #c59b27;    
+  --gold-hover: #aa821c;      
+  --error-color: #d32f2f;     
+}
+
+/* Tarjeta del formulario */
+.auth-card {
+  background-color: var(--card-bg-cream);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(26, 26, 26, 0.08), 
+              0 1px 3px rgba(26, 26, 26, 0.04);
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid rgba(197, 155, 39, 0.15); 
+  box-sizing: border-box;
+}
+
+/* Título */
+.auth-card h2 {
+  color: var(--text-dark);
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 25px 0;
+  letter-spacing: 0.5px;
+}
+
+/* Línea decorativa dorada bajo el título */
+.auth-card h2::after {
+  content: '';
+  display: block;
+  width: 45px;
+  height: 3px;
+  background-color: var(--gold-primary);
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Grupos de los campos */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiquetas */
+.form-group label {
+  color: var(--text-dark);
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* Inputs de texto/password/email */
+.form-group input {
+  background-color: #faf9f5; 
+  border: 1px solid #dcd8cd;
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: var(--text-dark);
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Color del texto de sugerencia */
+.form-group input::placeholder {
+  color: #a19c8e;
+}
+
+/* Focus en los inputs */
+.form-group input:focus {
+  border-color: var(--gold-primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 6px rgba(197, 155, 39, 0.2);
+}
+
+/* Inputs cuando tienen un error de validación */
+.form-group input.input-error {
+  border-color: var(--error-color);
+  background-color: #fff8f8;
+}
+
+.form-group input.input-error:focus {
+  box-shadow: 0 0 6px rgba(211, 47, 47, 0.2);
+}
+
+/* Mensajes de texto de error */
+.error-text {
+  color: var(--error-color);
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Botón de Enviar */
+.btn-submit {
+  width: 100%;
+  background-color: var(--gold-primary);
+  color: #ffffff; 
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+  background-color: var(--gold-hover);
+  box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);
+}
+
+.btn-submit:active {
+  transform: scale(0.99);
+}
+
+/* Texto inferior para alternar */
+.switch-text {
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 14px;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+/* Botón de enlace para cambiar de modo */
+.btn-switch {
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.btn-switch:hover {
+  color: var(--gold-primary);
+}

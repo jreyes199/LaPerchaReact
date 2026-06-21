@@ -25,8 +25,9 @@ function Navbar() {
           </div>
 
           <div className="icons">
+            <Link to="/login">
             <div className="icon user">👤</div>
-
+            </Link>
             <div
               className="icon cart"
               onClick={() => setAbrirCarrito(!abrirCarrito)}
