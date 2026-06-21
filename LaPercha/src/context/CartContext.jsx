@@ -6,30 +6,30 @@ export function CartProvider({ children }) {
   const [carrito, setCarrito] = useState([]);
 
   const agregarAlCarrito = (producto) => {
-    const existe = carrito.find((p) => p.id === producto.id);
+    setCarrito((prev) => {
+      const existe = prev.find((p) => p.id === producto.id);
 
-    if (existe) {
-      setCarrito(
-        carrito.map((p) =>
+      if (existe) {
+        return prev.map((p) =>
           p.id === producto.id
             ? { ...p, cantidad: p.cantidad + 1 }
             : p
-        )
-      );
-    } else {
-      setCarrito([
-        ...carrito,
-        {
-          ...producto,
-          cantidad: 1,
-        },
-      ]);
-    }
+        );
+      } else {
+        return [
+          ...prev,
+          {
+            ...producto,
+            cantidad: 1,
+          },
+        ];
+      }
+    });
   };
 
   const aumentarCantidad = (id) => {
-    setCarrito(
-      carrito.map((p) =>
+    setCarrito((prev) =>
+      prev.map((p) =>
         p.id === id
           ? { ...p, cantidad: p.cantidad + 1 }
           : p
@@ -38,8 +38,8 @@ export function CartProvider({ children }) {
   };
 
   const disminuirCantidad = (id) => {
-    setCarrito(
-      carrito
+    setCarrito((prev) =>
+      prev
         .map((p) =>
           p.id === id
             ? { ...p, cantidad: p.cantidad - 1 }
@@ -49,21 +49,15 @@ export function CartProvider({ children }) {
     );
   };
 
-  const eliminarDelCarrito = (id) => {
-  setCarrito(
-    carrito.filter((p) => p.id !== id)
-  );
-};
 
-const actualizarTalla = (id, talla) => {
-  setCarrito(
-    carrito.map((p) =>
-      p.id === id
-        ? { ...p, talla }
-        : p
-    )
-  );
-};
+  const eliminarProducto = (id) => {
+    setCarrito((prev) => prev.filter((p) => p.id !== id));
+  };
+
+  const limpiarCarrito = () => {
+    setCarrito([]);
+  };
+
 
   return (
     <CartContext.Provider
@@ -72,8 +66,10 @@ const actualizarTalla = (id, talla) => {
         agregarAlCarrito,
         aumentarCantidad,
         disminuirCantidad,
-        eliminarDelCarrito,
-        actualizarTalla,
+
+        eliminarProducto,
+        limpiarCarrito,
+
       }}
     >
       {children}
