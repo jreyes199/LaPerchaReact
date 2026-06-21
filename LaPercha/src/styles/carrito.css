@@ -300,3 +300,27 @@
 .contenido-pago textarea{
   resize:none;
 }
+
+.btn-eliminar{
+  width:40px;
+  height:40px;
+  background:#dc3545;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  margin-left:10px;
+}
+
+.btn-eliminar:hover{
+  background:#b02a37;
+}
+
+.selector-talla {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}

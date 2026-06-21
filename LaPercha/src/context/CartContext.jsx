@@ -49,6 +49,22 @@ export function CartProvider({ children }) {
     );
   };
 
+  const eliminarDelCarrito = (id) => {
+  setCarrito(
+    carrito.filter((p) => p.id !== id)
+  );
+};
+
+const actualizarTalla = (id, talla) => {
+  setCarrito(
+    carrito.map((p) =>
+      p.id === id
+        ? { ...p, talla }
+        : p
+    )
+  );
+};
+
   return (
     <CartContext.Provider
       value={{
@@ -56,6 +72,8 @@ export function CartProvider({ children }) {
         agregarAlCarrito,
         aumentarCantidad,
         disminuirCantidad,
+        eliminarDelCarrito,
+        actualizarTalla,
       }}
     >
       {children}
