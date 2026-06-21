@@ -209,3 +209,4 @@ function Carrito({ abierto, cerrar }) {
 }
 
 export default Carrito;
+
