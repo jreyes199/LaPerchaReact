@@ -49,7 +49,6 @@ export function CartProvider({ children }) {
     );
   };
 
-
   const eliminarProducto = (id) => {
     setCarrito((prev) => prev.filter((p) => p.id !== id));
   };
@@ -58,7 +57,6 @@ export function CartProvider({ children }) {
     setCarrito([]);
   };
 
-
   return (
     <CartContext.Provider
       value={{
@@ -66,10 +64,8 @@ export function CartProvider({ children }) {
         agregarAlCarrito,
         aumentarCantidad,
         disminuirCantidad,
-
         eliminarProducto,
         limpiarCarrito,
-
       }}
     >
       {children}
