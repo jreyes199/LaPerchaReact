@@ -528,3 +528,97 @@ body {
 .img-hover { opacity: 0; }
 .imagen-mision:hover .img-hover { opacity: 1; }
 .imagen-mision:hover .img-normal { opacity: 0; }
+
+.vision {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 10%;
+  background-color: #f8f8f8;
+}
+
+.texto-vision {
+  flex: 1;
+}
+
+.texto-vision h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.texto-vision p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
+}
+
+.imagen-vision {
+  flex: 1;
+  position: relative;
+  max-width: 500px;
+}
+
+.imagen-vision img {
+  width: 100%;
+  border-radius: 15px;
+  transition: opacity 0.4s ease;
+}
+
+.img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.imagen-vision:hover .img-hover {
+  opacity: 1;
+}
+
+.imagen-vision:hover .img-normal {
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vision {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .texto-vision h2 {
+    font-size: 2rem;
+  }
+
+  .texto-vision p {
+    text-align: center;
+  }
+
+  .imagen-vision {
+    max-width: 100%;
+  }
+}
+
+.compromiso {
+  width: 85%;
+  margin: 50px auto;
+  padding: 25px 35px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.compromiso p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.compromiso p:last-child {
+  margin-bottom: 0;
+}

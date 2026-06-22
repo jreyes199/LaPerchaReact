@@ -120,8 +120,8 @@ function Navbar() {
           <Link to="/damas">Damas</Link>
           <Link to="/caballeros">Caballeros</Link>
           <Link to="/contacto">Contáctanos</Link>
-          <a href="#">Blog</a>
-          <a href="#">Verano</a>
+          <Link to="/blog">Blog</Link>
+          
         </div>
       </header>
 

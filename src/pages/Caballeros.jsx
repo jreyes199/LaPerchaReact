@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 
 import camisaImg from "../assets/camisas.jpg";
 import pantalonImg from "../assets/pantalones.jpg";
+import shortImg from "../assets/shorts.jpg";
 
-import "../styles/categoriaDyC.css";
+import "../styles/caballeros.css";
 
 function Caballeros() {
   return (
@@ -27,9 +28,14 @@ function Caballeros() {
           </Link>
 
           <Link to="/pantalones" className="item">
-  <img src={pantalonImg} alt="Pantalones" />
-  <p>Pantalones</p>
-</Link>
+            <img src={pantalonImg} alt="Pantalones" />
+             <p>Pantalones</p>
+          </Link>
+
+          <Link to="/shorts" className="item">
+            <img src={shortImg} alt="Shorts" />
+            <p>Shorts</p>
+          </Link>
 
         </div>
       </main>

@@ -9,6 +9,8 @@ function Carrito({ abierto, cerrar }) {
     carrito,
     aumentarCantidad,
     disminuirCantidad,
+    eliminarDelCarrito,
+    actualizarTalla,
   } = useCart();
 
   const total = carrito.reduce(
@@ -71,26 +73,41 @@ function Carrito({ abierto, cerrar }) {
                     Subtotal: $
                     {item.precio * item.cantidad}
                   </p>
+<select
+  className="selector-talla"
+  value={item.talla || ""}
+  onChange={(e) =>
+    actualizarTalla(item.id, e.target.value)
+  }
+>
+  <option value="">
+    Seleccionar talla
+  </option>
+  <option value="XS">XS</option>
+  <option value="S">S</option>
+  <option value="M">M</option>
+  <option value="L">L</option>
+  <option value="XL">XL</option>
+</select>
 
-                  <div className="controles">
-                    <button
-                      onClick={() =>
-                        disminuirCantidad(item.id)
-                      }
-                    >
-                      -
-                    </button>
+                 <div className="controles">
+  <button onClick={() => disminuirCantidad(item.id)}>
+    -
+  </button>
 
-                    <span>{item.cantidad}</span>
+  <span>{item.cantidad}</span>
 
-                    <button
-                      onClick={() =>
-                        aumentarCantidad(item.id)
-                      }
-                    >
-                      +
-                    </button>
-                  </div>
+  <button onClick={() => aumentarCantidad(item.id)}>
+    +
+  </button>
+
+  <button
+    className="btn-eliminar"
+    onClick={() => eliminarDelCarrito(item.id)}
+  >
+    🗑️
+  </button>
+</div>
                 </div>
               </div>
             ))}
