@@ -21,6 +21,7 @@ export function CartProvider({ children }) {
           {
             ...producto,
             cantidad: 1,
+            talla: "", // 👈 importante
           },
         ];
       }
@@ -49,10 +50,20 @@ export function CartProvider({ children }) {
     );
   };
 
-  
   const eliminarDelCarrito = (id) => {
     setCarrito((prev) =>
       prev.filter((p) => p.id !== id)
+    );
+  };
+
+  // ⭐ AQUÍ ESTABA LO QUE TE FALTABA
+  const actualizarTalla = (id, talla) => {
+    setCarrito((prev) =>
+      prev.map((p) =>
+        p.id === id
+          ? { ...p, talla }
+          : p
+      )
     );
   };
 
@@ -67,7 +78,8 @@ export function CartProvider({ children }) {
         agregarAlCarrito,
         aumentarCantidad,
         disminuirCantidad,
-        eliminarDelCarrito, 
+        eliminarDelCarrito,
+        actualizarTalla, // 👈 IMPORTANTE
         limpiarCarrito,
       }}
     >
