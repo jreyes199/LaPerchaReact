@@ -12,7 +12,8 @@ const OPCIONES_BUSQUEDA = [
   { nombre: "Vestidos", ruta: "/vestidos" },
   { nombre: "Damas", ruta: "/damas" },
   { nombre: "Caballeros", ruta: "/Caballeros" },
-  { nombre: "Contacto", ruta: "/contacto" }
+  { nombre: "Contacto", ruta: "/contacto" },
+  { nombre: "Blog",ruta:"/blog"}
 ];
 
 function Navbar() {
